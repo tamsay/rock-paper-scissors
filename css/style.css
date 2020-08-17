@@ -1,0 +1,119 @@
+@font-face{
+    font-family: Barlow;
+    src: url(../assets/fonts/BarlowSemiCondensed-Regular.ttf);
+}
+body{
+    margin: 0%;
+    padding: 0%;
+    font-family: Barlow;
+    background-image: radial-gradient(circle, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+}
+.row{
+    padding: 0%;
+    margin: 0%;
+}
+.wrapper{
+    padding: 0%;
+    margin: 0%;
+}
+#heading{
+    display: flex;
+    justify-content: space-between;
+    margin: 3em;
+    padding: 1em;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+#heading .items-group{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 0%;
+    margin: 0%;
+}
+#heading .item-text{
+    font-weight: bold;
+}
+#heading .score-div{
+    background-color: white;
+    padding: 1em 2em;
+    margin: 0%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#heading .score-div p:first-child{
+    color: blue;
+    padding: 0%;
+    margin: 0%;
+}
+#score{
+    font-size: 2em;
+    padding: 0%;
+    margin: 0%;
+}
+
+
+/* Canvas Section */
+#mainDiv{
+    display: flex;
+    justify-content: center;
+    padding: 0%;
+    margin: 0%;
+    position: relative;
+}
+#mainDivWrapper{
+
+}
+#bg-pentagon{
+   
+    top: 0px;
+    width: 50%;
+}
+#rock{
+   
+    top: 0;
+}
+#paper{
+   
+    top: 25%;
+    right: 25%;
+}
+#scissors{
+   
+    top: 85%;
+    right: 30%;
+}
+#lizard{
+   
+    top: 85%;
+    left: 30%;
+}
+#spock{
+   
+    top: 25%;
+    left: 25%;
+}
+
+/* Rules Div */
+.rules-div{
+    display: flex;
+    justify-content: flex-end;
+    padding: 0em 3em 0em 0em;
+    margin: 0%;
+}
+.rules-div .btn{
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    padding: 0.25em 1em;
+}
+.rules-div .btn:hover{
+    cursor: pointer;
+}
+
+#outcomesDiv{
+    background-color: pink;
+}
