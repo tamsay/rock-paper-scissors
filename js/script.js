@@ -194,7 +194,6 @@ let animateWinner=(winner)=>{
             player.classList.add('grow')
     }
     else{
-        // alert('cpu')
         let cpu = document.querySelector('.cpuIcon')
         cpu.classList.add('grow')
 
