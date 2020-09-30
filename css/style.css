@@ -271,6 +271,14 @@ body{
     display: flex;
     justify-content: center;
 }
+#rulesModal .modal-body img{
+    width: 65%;
+}
+#rulesModal .instructions{
+    font-size: 1rem;
+    padding: 0em 1em;
+    line-height: 1.25em;
+}
 
 /* 320px — 480px: Mobile devices
 481px — 768px: iPads, Tablets
@@ -380,6 +388,11 @@ body{
     #rulesModal .modal-body img{
         width: 100%;
     }
+    #rulesModal .instructions{
+        font-size: 0.875rem;
+        padding: 0em 0.5em;
+        line-height: 1.25em;
+    }
 }
 @media all and (min-width: 481px) and (max-width: 768px){
     body{
@@ -485,7 +498,12 @@ body{
         padding: 0.5em 1em 0em 0em;
     }
     #rulesModal .modal-body img{
-        width: 100%;
+        width: 80%;
+    }
+    #rulesModal .instructions{
+        font-size: 1.5rem;
+        padding: 0em 0.5em;
+        line-height: 1.25em;
     }
 }
 @media all and (min-width: 769px) and (max-width: 1024px){
@@ -592,7 +610,12 @@ body{
         padding: 0.5em 1em 0em 0em;
     }
     #rulesModal .modal-body img{
-        width: 100%;
+        width: 80%;
+    }
+    #rulesModal .instructions{
+        font-size: 1.75rem;
+        padding: 0em 1em;
+        line-height: 1.25em;
     }
 }
 @media all and (min-width: 1025px) and (max-width: 1360px){
@@ -699,6 +722,11 @@ body{
         padding: 0.5em 1em 0em 0em;
     }
     #rulesModal .modal-body img{
-        width: 100%;
+        width: 50%;
+    }
+    #rulesModal .instructions{
+        font-size: 1.875rem;
+        padding: 0em 1em;
+        line-height: 1.25em;
     }
 }
