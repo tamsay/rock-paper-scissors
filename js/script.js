@@ -16,18 +16,18 @@ let cpuChoice =(items)=>{
 rock.addEventListener('click',()=>{
     let playerOption = rock.getAttribute('id');
     let cpuOption = cpuChoice(itemsArray);
-    displayOutcome();
+    let playerIcon = 'rock'
+    displayOutcome(playerIcon, cpuOption);
     setTimeout(() => {
         checkWinner(playerOption, cpuOption);
-        // let details = document.querySelector('#resultDetails')
-        //     details.classList.toggle('hide');
     }, 1000);
 });
 
 paper.addEventListener('click',()=>{
     let playerOption = paper.getAttribute('id');
     let cpuOption = cpuChoice(itemsArray);
-    displayOutcome();
+    let playerIcon = 'paper'
+    displayOutcome(playerIcon, cpuOption);
     setTimeout(() => {
         checkWinner(playerOption, cpuOption);
     }, 1000);
@@ -36,7 +36,8 @@ paper.addEventListener('click',()=>{
 scissors.addEventListener('click',()=>{
     let playerOption = scissors.getAttribute('id');
     let cpuOption = cpuChoice(itemsArray);
-    displayOutcome();
+    let playerIcon = 'scissors'
+    displayOutcome(playerIcon, cpuOption);
     setTimeout(() => {
         checkWinner(playerOption, cpuOption);
     }, 1000);
@@ -45,7 +46,8 @@ scissors.addEventListener('click',()=>{
 lizard.addEventListener('click',()=>{
     let playerOption = lizard.getAttribute('id');
     let cpuOption = cpuChoice(itemsArray);
-    displayOutcome();
+    let playerIcon = 'lizard'
+    displayOutcome(playerIcon, cpuOption);
     setTimeout(() => {
         checkWinner(playerOption, cpuOption);
     }, 1000);
@@ -54,27 +56,64 @@ lizard.addEventListener('click',()=>{
 spock.addEventListener('click',()=>{
     let playerOption = spock.getAttribute('id');
     let cpuOption = cpuChoice(itemsArray);
-    displayOutcome();
+    let playerIcon = 'spock'
+    displayOutcome(playerIcon, cpuOption);
     setTimeout(() => {
         checkWinner(playerOption, cpuOption);
     }, 1000);
 })
 
-let displayOutcome =()=>{
-    let playerDiv = document.createElement('div')
+let displayOutcome =(playerIcon, cpuOption)=>{
+
+    let playerDiv = document.createElement('div');
         playerDiv.className = 'col';
-        playerDiv.innerText = 'player icon'
+    
+    let playerChoice = document.createElement('p')
+        playerChoice.classList = 'choice'
+        playerChoice.innerText = `YOU PICKED:\n${playerIcon}`
+
+    let playerImage = document.createElement('img');
+        playerImage.classList = `${playerIcon} playerIcon`
+        playerImage.setAttribute('alt', `${playerIcon}`)
+        playerImage.setAttribute('src', `./assets/images/icon-${playerIcon}.svg`)
+    
+    playerDiv.appendChild(playerChoice)
+    playerDiv.appendChild(playerImage)
+
+    
+    let resultDetailsDiv = document.createElement('div')
+        resultDetailsDiv.className = 'col'
+        resultDetailsDiv.id = 'resultSection'
+    
+    let result = document.createElement('p')
+        result.id = 'resultDetails'
+        result.innerText = `...loading...`;
+    
+
+    let playBtn = document.createElement('button')
+        playBtn.classList = 'btn'
+        playBtn.setAttribute('data-dismiss', 'modal')
+        playBtn.innerText = 'Play Again'
+
+
+    resultDetailsDiv.appendChild(result);
+    resultDetailsDiv.appendChild(playBtn)
+
 
     let cpuDiv = document.createElement('div');
         cpuDiv.className = 'col'
-        cpuDiv.innerText = 'cpu icon'
+    
+    let cpuChoice = document.createElement('p')
+        cpuChoice.classList = 'choice'
+        cpuChoice.innerText = `THE HOUSE PICKED:\n${cpuOption}`
+    
+    let cpuIcon = document.createElement('img');
+        cpuIcon.classList = `${cpuOption} cpuIcon`
+        cpuIcon.setAttribute('alt', `${cpuOption}`)
+        cpuIcon.setAttribute('src', `./assets/images/icon-${cpuOption}.svg`);
 
-    let resultDetailsDiv = document.createElement('div')
-        resultDetailsDiv.className = 'col'
-        resultDetailsDiv.id = 'resultDetails'
-        // resultDetailsDiv.setAttribute('style', "display:none")
-        // resultDetailsDiv.innerText = 'winner text'
-
+    cpuDiv.appendChild(cpuChoice)
+    cpuDiv.appendChild(cpuIcon)
     outcomeDiv.innerText = '';
     outcomeDiv.appendChild(playerDiv)
     outcomeDiv.appendChild(resultDetailsDiv)
@@ -149,6 +188,18 @@ let subtractPoint=()=>{
         }
         scoreBoard.innerText = --value;
 }
+let animateWinner=(winner)=>{
+    if(winner === 'Player'){
+        let player = document.querySelector('.playerIcon')
+            player.classList.add('grow')
+    }
+    else{
+        // alert('cpu')
+        let cpu = document.querySelector('.cpuIcon')
+        cpu.classList.add('grow')
+
+    }
+}
 let displayWinner=(winner)=>{
     let winnerDiv = document.querySelector('#resultDetails')
     if(winner === 'draw'){
@@ -156,5 +207,6 @@ let displayWinner=(winner)=>{
     }
     else{
         winnerDiv.innerText = `${winner} wins`
+        animateWinner(winner)
     }
 }
