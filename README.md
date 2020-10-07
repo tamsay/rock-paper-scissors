@@ -26,7 +26,7 @@ Mobile
 
 ## Live Demo
 
-[Hosted Link](tamsay-rock-paper-scissors-spook-lizard.netlify.app)
+[Hosted Link](https://tamsay-rock-paper-scissors-spook-lizard.netlify.app/)
 
 ## Author
 
